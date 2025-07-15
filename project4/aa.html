@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess the Number </title>
+</head>
+<STYle>
+    body {
+        background-color: #790c0c;
+
+        margin-top: 150px;
+    }
+
+    h1 {
+  margin-top: 150px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    button {
+        width: 55px;
+        cursor: pointer;
+    }
+
+    input {
+        font-size: larger;
+        width: 325px;
+    }
+
+    input:hover {
+        cursor: pointer;
+        
+    }
+
+    .button:hover .fish {
+        animation: fish ease 4s;
+
+    }
+
+    .button:hover .wave {
+        animation: shadow ease 1s;
+        animation-fill-mode: forwards;
+    }
+
+    .button:hover .button_text {
+        letter-spacing: 14px;
+        font-size: 25px;
+    }
+</style>
+<link rel="stylesheet" href="one.css">
+
+<body>
+    <div class="fish">
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+    </div>
+    <div class="fish">
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+        <div class="koiCoil"></div>
+    </div>
+    <div class="seaLevel">
+        <h1> GUESS THE NUMBER FROM 1-20</h1>
+        <div class="btn">
+            <input type="text" id="userInput">
+            <br>
+
+            <button>submit</button>
+
+            
+        </div>
+
+    </div>
+
+
+</body>
+<script>
+    
+    // Generate random number from 1 to 20
+    const randomNumber = Math.floor(Math.random() * 20) + 1;
+
+    const button = document.querySelector("button");
+    const input = document.getElementById("userInput");
+
+    // Create a place to show result messages
+    const result = document.createElement("p");
+    result.style.textAlign = "center";
+    result.style.color = "#227dcc";
+    document.body.appendChild(result);
+
+    button.addEventListener("click", () => {
+        const userGuess = parseInt(input.value);
+
+        if (isNaN(userGuess)) {
+            result.textContent = "❌ Please enter a valid number!";
+            return;
+        }
+
+        if (userGuess < 1 || userGuess > 20) {
+            result.textContent = " Number must be between 1 and 20!";
+        } else if (userGuess === randomNumber) {
+            result.textContent = " Congratulations! You guessed it right!";
+        } else if (userGuess < randomNumber) {
+            result.textContent = " Too low! Try again.";
+        } else {
+            result.textContent = " Too high! Try again.";
+        }
+    });
+ 
+  
+</script>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color changer </title>
+</head>
+<style>
+    body {
+        background-color: aliceblue;
+        display: flex;
+
+        justify-content: center;
+
+    }
+
+    .con {
+        margin-top: 50px;
+        width: 40%;
+        height: 500px;
+        gap: 12px;
+        border: 2px solid black;
+
+
+    }
+
+    h1 {
+        margin-bottom: 150px;
+        margin-left: 42px;
+
+    }
+
+    span {
+        margin-top: 200px;
+        gap: 12px;
+        width: 15px;
+        height: 15px;
+        border: 2px solid black;
+        padding: 20px;
+
+
+    }
+</style>
+
+<body>
+    <div class="con">
+
+
+        <h1>Color scheme switcher</h1>
+        <span class="button" id="grey" style="background-color: grey;">1</span>
+        <span class="button" id="white" style="background-color: white;">2</span>
+        <span class="button" id="blue" style="background-color: blue;">3</span>
+        <span class="button" id="yellow" style="background-color: yellow;">4</span>
+    </div>
+
+</body>
+
+<script>
+    const button = document.querySelectorAll('.button')
+    const body = document.querySelector("body")
+
+    button.forEach(function (button) {
+        console.log(button)
+        button.addEventListener('click', function (e) {
+            console.log(e)
+            console.log(e.target)
+            if(e.target.id=='grey'){
+                body.style.backgroundColor = 'grey'
+            }
+            if(e.target.id=='white'){
+                body.style.backgroundColor = 'white'
+            }
+            if(e.target.id=='blue'){
+                body.style.backgroundColor = 'blue'
+            }
+            if(e.target.id=='yellow'){
+                body.style.backgroundColor = 'yellow'
+            }
+
+        })
+
+    })
+
+
+
+
+</script>
+
+
+
+
+
+</html>

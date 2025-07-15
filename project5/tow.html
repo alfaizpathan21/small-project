@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>chai with code </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+
+
+
+
+
+</body>
+
+<script>
+
+ let InterId; // Declare outside so both buttons can access
+
+document.querySelector('#start').addEventListener('click', function () {
+    const saydate = function () {
+        console.log("Hello", Date.now());
+    };
+    InterId = setInterval(saydate, 1000); // assign here
+});
+
+document.querySelector('#stop').addEventListener('click', function () {
+    clearInterval(InterId);  // clear when stop is clicked
+    console.log("Interval stopped.");
+});
+
+</script>
+
+</html>

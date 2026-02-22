@@ -36,7 +36,7 @@
 
 
 <script>
-    let randomNumber = console.log(parseInt(Math.random() * 10 + 1))
+    let randomNumber = console.log(parseInt(Math.random() * 100 + 1))
 
 
     const submit = document.querySelector('#subt')
@@ -73,7 +73,7 @@
         }
         else {
             presGuess.push(guess)
-            if (numGuess === 10) {
+            if (numGuess === 100) {
                 displayGuess(guess)
                 displayMessage(`"Game Over . random number was" ${randomNumber}`)
                 endGame()
@@ -125,7 +125,7 @@
     function newGame() {
         const newgameButton = document.querySelector('#newGame')
         newgameButton.addEventListener('click', function (e) {
-            randomNumber = parseInt(Math.random() * 10 + 1)
+            randomNumber = parseInt(Math.random() * 100 + 1)
             presGuess = []
             numGuess = 1
             guessSolt.innerHTML = ''
